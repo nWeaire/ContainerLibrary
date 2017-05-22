@@ -3,7 +3,7 @@
 #include "Queue.h"
 #include "Stack.h"
 #include "ObjectPool.h"
-
+#include "LinkedList.h"
 
 using namespace std;
 
@@ -145,18 +145,26 @@ void QueueTest()
 
 void LinkedListTest()
 {
+	LinkedList<int>* l1;
+	l1 = new LinkedList<int>;
+	l1->PushFront(10);
+	l1->PushBack(12);
+	l1->IndexInsert(2, 11);
 
+	cout << l1->First() << endl;
+	cout << l1->Last() << endl;
 
+	system("pause");
 }
 
 
 void main()
 {
-	ObjectPool pool(50);
+	//ObjectPool pool(50);
 
-	Entity* p = pool.Allocate();
+	//Entity* p = pool.Allocate();
 
-	pool.Deallocate(p);
+	//pool.Deallocate(p);
 
 	//DynamicArrayTest();
 	//QueueTest();
