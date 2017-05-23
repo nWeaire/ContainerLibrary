@@ -4,6 +4,8 @@
 #include "Stack.h"
 #include "ObjectPool.h"
 #include "LinkedList.h"
+#include "ResourceManager.h"
+
 
 using namespace std;
 
@@ -157,6 +159,20 @@ void LinkedListTest()
 	system("pause");
 }
 
+void ResourceManagerTest()
+{
+	// Declare in header
+	// ResourceManager<aie::Texture>* m_pResourceMan; 
+
+	// Create
+	// m_pResourceMan = new ResourceManager<Texture>()
+	
+	// Delete
+	// delete m_pResourceMan
+
+	//m_shipTexure = m_pResourceMan->LoadResource(Texture location);
+	//Texture* Ship2 = m_pResourceMan->LoadResource(Texture location);
+}
 
 void main()
 {
@@ -168,7 +184,9 @@ void main()
 
 	//DynamicArrayTest();
 	//QueueTest();
-	LinkedListTest();
+	//LinkedListTest();
+	ResourceManagerTest();
+
 
 	system("pause");
 }

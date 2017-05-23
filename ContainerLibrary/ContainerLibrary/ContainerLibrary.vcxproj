@@ -148,6 +148,8 @@
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="ObjectPool.h" />
     <ClInclude Include="Queue.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>
