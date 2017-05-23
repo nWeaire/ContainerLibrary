@@ -80,81 +80,47 @@ void DynamicArrayTest() // Testing Dynamic array
 	
 }
 
-void QueueTest()
-{
-	cout << "Queue test" << endl << endl << endl;
-	Queue<int> myQueue(1);
-	cout << "Initial sizes" << endl;
-	cout << "Used " << myQueue.size() << endl;
-	cout << "Capacity " << myQueue.capacity() << endl << endl;
-
-	cout << "Adding initial values" << endl;
-	myQueue.push(9);
-	myQueue.push(8);
-	myQueue.push(7);
-	myQueue.push(6);
-	myQueue.push(5);
-	cout << endl;
-
-	cout << "New values are" << endl;
-	for (int i = 0; i < myQueue.size(); ++i)
-	{
-		cout << myQueue[i] << endl;
-	}
-
-	cout << "New sizes" << endl;
-	cout << "Used " << myQueue.size() << endl;
-	cout << "Capacity " << myQueue.capacity() << endl << endl;
-
-	cout << "poping off top 3 values" << endl;
-	cout << myQueue.pop() << endl;
-	cout << myQueue.pop() << endl;
-	cout << myQueue.pop() << endl;
-
-	cout << endl;
-
-	cout << "New values are" << endl;
-	for (int i = 0; i < myQueue.size(); ++i)
-	{
-		cout << myQueue[i] << endl;
-	}
-
-	cout << endl;
-
-	cout << "Clearing" << endl << endl;
-	myQueue.clear();
-	cout << "Is the queue now empty? " << endl;
-	int e = myQueue.empty();
-
-	if (e != 0)
-		cout << "The queue is empty!" << endl;
-	else
-		cout << "The queue is not empty!" << endl;
-
-	cout << endl;
-
-	cout << "Final Queue size and capacity!" << endl;
-	cout << "Used " << myQueue.size() << endl;
-	cout << "Capacity " << myQueue.capacity() << endl << endl;
-
-
-	Stack<int> myStack(1);
-	cout << myStack.Pop() << endl;
-	cout << myStack.Pop() << endl;
-	cout << myStack.Pop() << endl;
-
-}
-
 void LinkedListTest()
 {
 	LinkedList<int>* l1;
 	l1 = new LinkedList<int>;
 	l1->PushFront(10);
+	l1->PushFront(10);
+	l1->PushFront(10);
+	l1->PushFront(10);
+	l1->PushFront(10);
 	l1->PushBack(12);
 	l1->IndexInsert(2, 11);
+	//Print List
+	l1->printList();
 
+	// test remove
+	l1->remove(10);
 	cout << l1->First() << endl;
-	cout << l1->Last() << endl;
+	// test removing from iterator
+	l1->erase(1);
+	cout << l1->First() << endl;
+	// clears entire list
+	l1->clear();
+	// checks if empty
+	if (l1->empty() != 0)
+		cout << "This list is empty!" << endl;
+	else
+		cout << "This list has something in it!" << endl;
+	// Add to front and back of list
+	l1->PushFront(3);
+	l1->PushFront(2);
+	l1->PushFront(1);
+	l1->PushBack(4);
+	// pop from front
+	cout << l1->popFront() << endl;
+	cout << l1->popFront() << endl;
+	// pop from back
+	cout << l1->popBack() << endl;
+	cout << l1->popBack() << endl;
+
+
+
 
 	system("pause");
 }
@@ -172,6 +138,51 @@ void ResourceManagerTest()
 
 	//m_shipTexure = m_pResourceMan->LoadResource(Texture location);
 	//Texture* Ship2 = m_pResourceMan->LoadResource(Texture location);
+
+
+
+	//singleton 
+	//ResourceManager<Texture>::Create();
+	//m_pResourceMan = ResourceManager<Texture>::GetInstance();
+
+}
+
+void QueueTest()
+{
+	Queue<int> q1;
+
+	//Create inital queue values
+	q1.Push(1);
+	q1.Push(2);
+	q1.Push(3);
+	q1.Push(4);
+	q1.Push(5);
+
+	//Print values
+	q1.printList();
+
+	// Clear Queue
+	q1.clear();
+
+	// Check if empty
+	if (q1.empty() != 0)
+		cout << "List is empty" << endl;
+	else
+		cout << "List is not empty" << endl;
+
+	q1.Push(1);
+	q1.Push(2);
+	q1.Push(3);
+
+	//Popping values off
+	cout << q1.pop() << endl;
+	cout << q1.pop() << endl;
+	cout << q1.pop() << endl;
+	cout << q1.pop() << endl;
+
+	cout << q1.size() << endl;
+	
+	system("pause");
 }
 
 void main()
@@ -185,8 +196,7 @@ void main()
 	//DynamicArrayTest();
 	//QueueTest();
 	//LinkedListTest();
-	ResourceManagerTest();
+	//ResourceManagerTest();
+	QueueTest();
 
-
-	system("pause");
 }
