@@ -149,39 +149,66 @@ void ResourceManagerTest()
 
 void QueueTest()
 {
-	Queue<int> q1;
+	Queue<int>* q1;
+	q1 = new Queue<int>;
 
 	//Create inital queue values
-	q1.Push(1);
-	q1.Push(2);
-	q1.Push(3);
-	q1.Push(4);
-	q1.Push(5);
+	q1->Push(1);
+	q1->Push(2);
+	q1->Push(3);
+	q1->Push(4);
+	q1->Push(5);
 
 	//Print values
-	q1.printList();
+	q1->printList();
 
 	// Clear Queue
-	q1.clear();
+	q1->clear();
 
 	// Check if empty
-	if (q1.empty() != 0)
+	if (q1->empty() != 0)
 		cout << "List is empty" << endl;
 	else
 		cout << "List is not empty" << endl;
 
-	q1.Push(1);
-	q1.Push(2);
-	q1.Push(3);
+	q1->Push(1);
+	q1->Push(2);
+	q1->Push(3);
 
 	//Popping values off
-	cout << q1.pop() << endl;
-	cout << q1.pop() << endl;
-	cout << q1.pop() << endl;
-	cout << q1.pop() << endl;
-
-	cout << q1.size() << endl;
+	cout << q1->pop() << endl;
+	cout << q1->pop() << endl;
+	cout << q1->pop() << endl;
+	cout << q1->pop() << endl;
+			  
+	cout << q1->size() << endl;
 	
+	system("pause");
+}
+
+void StackTest()
+{
+	Stack<int>* s1;
+	s1 = new Stack<int>;
+
+	s1->push(1);
+	s1->push(2);
+	s1->push(3);
+	s1->push(4);
+
+	cout << s1->size() << endl;
+
+	cout << s1->pop() << endl;
+	cout << s1->top() << endl;
+
+	s1->Clear();
+
+	if (s1->empty() == true)
+		cout << "Stack is empty!" << endl;
+	else
+		cout << "Stack is not empty!" << endl;
+
+
 	system("pause");
 }
 
@@ -197,6 +224,6 @@ void main()
 	//QueueTest();
 	//LinkedListTest();
 	//ResourceManagerTest();
-	QueueTest();
-
+	//QueueTest();
+	StackTest();
 }

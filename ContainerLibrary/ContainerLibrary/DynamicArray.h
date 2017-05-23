@@ -119,6 +119,20 @@ public:
 		return m_nCapacity;
 	}
 
+	bool empty()
+	{
+		if (m_nUsed <= 0)
+			return true;
+		else
+			return false;
+	}
+
+	T back()
+	{
+		return m_pData[m_nUsed - 1];
+	}
+
+
 private:
 
 	DynamicArray& operator= (const DynamicArray& other) = default;
