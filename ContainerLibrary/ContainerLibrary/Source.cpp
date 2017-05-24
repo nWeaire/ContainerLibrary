@@ -212,6 +212,15 @@ void StackTest()
 	system("pause");
 }
 
+enum EGameState
+{
+	SPLASH,
+	MENU,
+	LEVEL1,
+	LEVEL2,
+	GAMEOVER
+};
+
 void main()
 {
 	//ObjectPool pool(50);
@@ -225,5 +234,10 @@ void main()
 	//LinkedListTest();
 	//ResourceManagerTest();
 	//QueueTest();
-	StackTest();
+	//StackTest();
+
+
+
+
+
 }
