@@ -86,7 +86,7 @@ public:
 		}
 	}
 
-	int count()
+	int Size()
 	{
 			return nodeCount;
 	}

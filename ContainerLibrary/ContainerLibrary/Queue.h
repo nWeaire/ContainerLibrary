@@ -26,7 +26,7 @@ public:
 
 	int size()
 	{
-		return q.count();
+		return q.Size();
 	}
 
 	bool empty()
